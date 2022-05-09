@@ -12,14 +12,14 @@ class Button {
       this.string_7,
     ];
     this.type = [
-      '#UNSHIFT_EN',
-      '#SHIFT_EN',
-      '#UNSHIFT_RU',
-      '#SHIFT_RU',
-      '#CAPSLOCK_UNSHIFT_EN',
-      '#CAPSLOCK_SHIFT_EN',
-      '#CAPSLOCK_UNSHIFT_RU',
-      '#CAPSLOCK_SHIFT-RU',
+      'UNSHIFT_EN',
+      'SHIFT_EN',
+      'UNSHIFT_RU',
+      'SHIFT_RU',
+      'CAPSLOCK_UNSHIFT_EN',
+      'CAPSLOCK_SHIFT_EN',
+      'CAPSLOCK_UNSHIFT_RU',
+      'CAPSLOCK_SHIFT_RU',
     ];
 
     this.parent = document.querySelector('.keyboard');
@@ -37,69 +37,69 @@ class Button {
 
   addCodeClass(k, i) {
     if (Number.isInteger(parseInt(this.key.UNSHIFT.EN[k][i], 10))) {
-      this.button.classList.add(`Digit${this.key.UNSHIFT.EN[k][i]}`);
+      this.button.setAttribute('id', `Digit${this.key.UNSHIFT.EN[k][i]}`);
     } else if (this.key.UNSHIFT.EN[k][i] === '`') {
-      this.button.classList.add('Backquote');
-    } else if (this.key.UNSHIFT.EN[k][i] === 'space') {
-      this.button.classList.add('Space');
+      this.button.setAttribute('id', 'Backquote');
+    } else if (this.key.UNSHIFT.EN[k][i] === 'Space') {
+      this.button.setAttribute('id', 'Space');
     } else if (this.key.UNSHIFT.EN[k][i] === 'Enter') {
-      this.button.classList.add('Enter');
+      this.button.setAttribute('id', 'Enter');
     } else if (this.key.UNSHIFT.EN[k][i] === 'backspace') {
-      this.button.classList.add('Backspace');
+      this.button.setAttribute('id', 'Backspace');
     } else if (this.key.UNSHIFT.EN[k][i] === '=') {
-      this.button.classList.add('Equal');
+      this.button.setAttribute('id', 'Equal');
     } else if (this.key.UNSHIFT.EN[k][i] === '-') {
-      this.button.classList.add('Minus');
+      this.button.setAttribute('id', 'Minus');
     } else if (this.key.UNSHIFT.EN[k][i] === '/') {
-      this.button.classList.add('Slash');
+      this.button.setAttribute('id', 'Slash');
     } else if (this.key.UNSHIFT.EN[k][i] === '|' || this.key.UNSHIFT.EN[k][i] === '\\') {
-      this.button.classList.add('Backslash');
+      this.button.setAttribute('id', 'Backslash');
     } else if (this.key.UNSHIFT.EN[k][i] === '_') {
-      this.button.classList.add('Minus');
+      this.button.setAttribute('id', 'Minus');
     } else if (this.key.UNSHIFT.EN[k][i] === 'LShift') {
-      this.button.classList.add('ShiftLeft');
+      this.button.setAttribute('id', 'ShiftLeft');
     } else if (this.key.UNSHIFT.EN[k][i] === 'RShift') {
-      this.button.classList.add('ShiftRight');
+      this.button.setAttribute('id', 'ShiftRight');
     } else if (this.key.UNSHIFT.EN[k][i] === 'LAlt') {
-      this.button.classList.add('AltLeft');
+      this.button.setAttribute('id', 'AltLeft');
     } else if (this.key.UNSHIFT.EN[k][i] === 'RAlt') {
-      this.button.classList.add('AltRight');
+      this.button.setAttribute('id', 'AltRight');
     } else if (this.key.UNSHIFT.EN[k][i] === 'LCtrl') {
-      this.button.classList.add('ControlLeft');
+      this.button.setAttribute('id', 'ControlLeft');
     } else if (this.key.UNSHIFT.EN[k][i] === 'RCtrl') {
-      this.button.classList.add('ControlRight');
+      this.button.setAttribute('id', 'ControlRight');
     } else if (this.key.UNSHIFT.EN[k][i] === 'TAB') {
-      this.button.classList.add('Tab');
+      this.button.setAttribute('id', 'Tab');
     } else if (this.key.UNSHIFT.EN[k][i] === 'Del') {
-      this.button.classList.add('NumpadDecimal');
+      this.button.setAttribute('id', 'Delete');
     } else if (this.key.UNSHIFT.EN[k][i] === ';') {
-      this.button.classList.add('Semicolon');
+      this.button.setAttribute('id', 'Semicolon');
     } else if (this.key.UNSHIFT.EN[k][i] === '\'') {
-      this.button.classList.add('Quote');
+      this.button.setAttribute('id', 'Quote');
     } else if (this.key.UNSHIFT.EN[k][i] === '▲') {
-      this.button.classList.add('ArrowUp');
+      this.button.setAttribute('id', 'ArrowUp');
     } else if (this.key.UNSHIFT.EN[k][i] === '◄') {
-      this.button.classList.add('ArrowLeft');
+      this.button.setAttribute('id', 'ArrowLeft');
     } else if (this.key.UNSHIFT.EN[k][i] === '▼') {
-      this.button.classList.add('ArrowDown');
+      this.button.setAttribute('id', 'ArrowDown');
     } else if (this.key.UNSHIFT.EN[k][i] === '►') {
-      this.button.classList.add('ArrowRight');
-    } else if (this.key.UNSHIFT.EN[k][i] === 'WIN') {
-      this.button.classList.add('MetaLeft');
+      this.button.setAttribute('id', 'ArrowRight');
+    } else if (this.key.UNSHIFT.EN[k][i] === 'Win') {
+      this.button.setAttribute('id', 'MetaLeft');
     } else if (this.key.UNSHIFT.EN[k][i] === ',') {
-      this.button.classList.add('Coma');
+      this.button.setAttribute('id', 'Comma');
     } else if (this.key.UNSHIFT.EN[k][i] === '.') {
-      this.button.classList.add('Perion');
-    } else if (this.key.UNSHIFT.EN[k][i] === 'CAPSLOCK') {
-      this.button.classList.add('CapsLock');
+      this.button.setAttribute('id', 'Period');
+    } else if (this.key.UNSHIFT.EN[k][i] === 'CapsLock') {
+      this.button.setAttribute('id', 'CapsLock');
     } else if (this.key.UNSHIFT.EN[k][i] === '[') {
-      this.button.classList.add('BracketLeft');
+      this.button.setAttribute('id', 'BracketLeft');
     } else if (this.key.UNSHIFT.EN[k][i] === ']') {
-      this.button.classList.add('BracketRight');
+      this.button.setAttribute('id', 'BracketRight');
     } else if (this.key.UNSHIFT.EN[k][i] === 'ENTER') {
-      this.button.classList.add('Enter');
+      this.button.setAttribute('id', 'Enter');
     } else {
-      this.button.classList.add(`Key${this.key.SHIFT.EN[k][i]}`);
+      this.button.setAttribute('id', `Key${this.key.SHIFT.EN[k][i]}`);
     }
   }
 
