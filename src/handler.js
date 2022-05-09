@@ -20,6 +20,10 @@ class Handler {
     this.insertValue = null;
   }
 
+  uploadModule() {
+    this.chandeKeyboardLetters();
+  }
+
   focusedField() {
     window.addEventListener('keydown', () => {
       this.textarea.focus();
@@ -74,15 +78,13 @@ class Handler {
     }
   }
 
-  // insertTextFromKeyboard() {
-  //   this.span.forEach((el) => {
-  //     console.log(el);
-  //   });
-  // }
+  insertTextFromKeyboard(event) {
+    this.addText(document.querySelector(`#${event.code}`).querySelector(`#${this.type}`).innerHTML);
+  }
 
   listenerDown = (event) => {
     event.preventDefault();
-    this.insertTextFromKeyboard();
+    this.insertTextFromKeyboard(event);
     this.buttons.forEach((btn) => {
       if (btn.id === event.code) {
         if (event.code === 'Tab' || event.altKey) {
@@ -144,6 +146,13 @@ class Handler {
     window.addEventListener('keyup', this.listenerUp);
   }
 
+  keypressHandler() {
+    window.addEventListener('keypress', (event) => {
+      event.preventDefault();
+      this.textarea.focus();
+    });
+  }
+
   addStyleButton(event) {
     this.target = document.getElementById(`${event.code}`);
     this.target.classList.toggle('active');
@@ -175,6 +184,7 @@ class Handler {
       }
       this.chandeKeyboardLetters();
     }
+    localStorage.setItem('Language', this.type);
   }
 
   capslockButtons() {
@@ -276,6 +286,7 @@ class Handler {
         span.classList.remove('hidden');
       });
     }
+    localStorage.setItem('Language', this.type);
   }
 
   addButtonClickListener() {
@@ -284,6 +295,7 @@ class Handler {
       element.addEventListener('mousedown', this.listenerDownMouse);
       element.addEventListener('mouseup', this.listenerUpMouse);
     });
+    this.keypressHandler();
     this.keyDownListener();
     this.keyUpListener();
   }
